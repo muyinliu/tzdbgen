@@ -171,8 +171,8 @@ public final class TzdbZoneRulesCompiler {
         }
         try {
             // get tzdb source version
-            Matcher m = Pattern.compile("tzdata(?<ver>[0-9]{4}[A-z])")
-                               .matcher(new String(Files.readAllBytes(srcDir.resolve("VERSION")),
+            Matcher m = Pattern.compile("(?<ver>[0-9]{4}[A-z])")
+                               .matcher(new String(Files.readAllBytes(srcDir.resolve("version")),
                                                    "ISO-8859-1"));
             if (m.find()) {
                 version = m.group("ver");
