@@ -177,8 +177,8 @@ public final class TzdbZoneRulesCompiler {
             if (m.find()) {
                 version = m.group("ver");
             } else {
+                System.err.println("Source directory does not contain file: version");
                 System.exit(1);
-                System.err.println("Source directory does not contain file: VERSION");
             }
             printVerbose("Compiling TZDB version " + version);
             // parse source files
